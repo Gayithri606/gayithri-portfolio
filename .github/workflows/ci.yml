@@ -1,0 +1,21 @@
+name: ci
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure Git Credentials
+        run: |
+          git config user.email action@github.com
+          git config user.name "GitHub Actions"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - run: pip install mkdocs-material
+      - run: mkdocs gh-deploy --force

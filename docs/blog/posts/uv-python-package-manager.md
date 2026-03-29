@@ -1,7 +1,7 @@
 ---
 date: 2024-03-20
 authors:
-  - daveebbelaar
+  - gayithriponnapalli
 categories:
   - Tools
   - Python

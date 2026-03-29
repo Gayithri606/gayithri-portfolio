@@ -1,24 +1,24 @@
 ---
 title: Case Studies
-description: Datalumina B.V. is a data, analytics, and artificial intelligence company founded by Dave Ebbelaar to help businesses integrate AI and data into their operations. 
+description: AI engineering projects by Gayithri Ponnapalli — RAG systems, FastAPI backends, and production AI applications.
 ---
 
 # Featured Projects
 
-Welcome to my portfolio of data science and AI projects. Each project demonstrates my expertise in delivering impactful solutions to real-world business challenges.
+A collection of AI engineering and backend development projects demonstrating real-world impact. Each project reflects a focus on production-grade reliability, modern AI techniques, and measurable outcomes.
 
 <div class="grid cards" markdown>
 
--   [AI Customer Care Bot for Dev X](projects/project-1.md)
+-   [RAG-Based AI Assistant with pgvector](projects/project-1.md)
 
     ---
 
-    An AI-powered chatbot solution for Dev X that enables customer service transformation, featuring Slack integration and sub-3 second response times. Built with OpenAI, Pinecone, and Azure cloud infrastructure to achieve 100% accuracy on initial datasets.
+    A production-ready Retrieval-Augmented Generation application built with FastAPI, PostgreSQL/pgvector, PydanticAI, and Langfuse observability. Designed to answer real questions from organizational data with high accuracy and full traceability.
 
--   [Enterprise Chatbot for Company Y](projects/project-2.md)
+-   [Walmart Core System Performance Overhaul](projects/project-2.md)
 
     ---
 
-    A private ChatGPT-like tool for the Company Y that revolutionizes mobility data analysis by combining structured SQL data with unstructured policy documents. Built with OpenAI and modern cloud architecture for comprehensive public sector policy evaluation.
+    Led the JDK 17 migration delivering a 20% performance boost in 6 weeks, followed by a Spring Boot 2.5→3.3 upgrade that improved startup time by 15% and significantly improved system maintainability.
 
 </div>

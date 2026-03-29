@@ -1,10 +1,10 @@
-site_name: Your Site Name
-site_description: Your site description
+site_name: Gayithri Ponnapalli
+site_description: AI Engineer helping teams build reliable RAG assistants, chatbots, and AI automation using Python, FastAPI, and LLMs.
 site_url: https://yourdomain.com
 
 nav:
   - Home:
-    - About: index.md
+    - index.md
   - Case Studies:
     - Overview: portfolio/index.md
     - Projects:
@@ -51,14 +51,10 @@ theme:
 extra:
   generator: true
   social:
-    - icon: fontawesome/solid/building
-      link: https://company.com
     - icon: fontawesome/brands/github
-      link: https://github.com/
-    - icon: fontawesome/brands/youtube
-      link: https://youtube.com/
+      link: https://github.com/YOUR_GITHUB_USERNAME
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com
+      link: https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME
   analytics:
     # provider: google
     # property: G-W9Y130NXVZ
@@ -102,4 +98,4 @@ extra_files:
   - docs/robots.txt
 
 copyright: |
-  &copy; 2024 <a href="https://www.linkedin.com" target="_blank" rel="noopener">John Doe</a>. All rights reserved.
+  &copy; 2026 <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME" target="_blank" rel="noopener">Gayithri Ponnapalli</a>. All rights reserved.

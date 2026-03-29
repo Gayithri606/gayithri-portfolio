@@ -1,169 +1,158 @@
 ---
-title: About Me
-description: Explore AI, data science, and entrepreneurship with Dave Ebbelaar. Learn about Datalumina, AI tutorials, freelancing, and innovative AI solutions for businesses.
-keywords: Dave Ebbelaar, AI entrepreneur, Datalumina, AI tutorials, Data Freelancer, GenAI Launchpad
-author: Dave Ebbelaar
-canonical_url: https://www.daveebbelaar.com/
+title: Gayithri Ponnapalli
+description: Gayithri Ponnapalli is an AI Engineer who helps teams build reliable RAG assistants, chatbots, and AI automation using Python, FastAPI, and LLMs.
+keywords: Gayithri Ponnapalli, AI Engineer, RAG, Python, FastAPI, LLM, PydanticAI, LangChain, MCP
+author: Gayithri Ponnapalli
+canonical_url: https://yourdomain.com
 ---
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Dave Ebbelaar",
-  "url": "https://www.daveebbelaar.com/",
-  "image": "https://avatars.githubusercontent.com/u/34709402?v=4",
+  "name": "Gayithri Ponnapalli",
+  "url": "https://yourdomain.com",
   "sameAs": [
-    "https://www.youtube.com/channel/UCn8ujwUInbJkBhffxqAPBVQ",
-    "https://www.youtube.com/@daveebbelaar",
-    "https://www.linkedin.com/in/daveebbelaar/",
-    "https://github.com/daveebbelaar"
-    "https://www.skool.com/@daveebbelaar"
+    "https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME",
+    "https://github.com/YOUR_GITHUB_USERNAME"
   ],
-  "jobTitle": "Founder & CEO",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Datalumina",
-    "url": "https://www.datalumina.com/"
-  },
+  "jobTitle": "AI Engineer",
+  "email": "gayithri@pojoai.com"
 }
 </script>
 
-<div class="hero-section grid-container" markdown>
+<div class="hero-section" markdown>
 
-<div class="text-intro-grid" markdown>
+<div class="hero-left" markdown>
 
-# Turn AI complexity into your competitive advantage
+# Hi, I am Gayithri. I turn AI ideas into dependable business solutions.
 
-### I have 5+ years experience doing just that
+<p class="hero-subtitle">5+ years of backend engineering. Now solving real AI problems.</p>
 
-- Are you struggling to keep up with the rapid pace of AI innovation?
+- Need RAG assistants that answer real questions — not hallucinated ones?
+- Want chatbots that handle real requests without breaking?
+- Looking for automation that cuts real manual work from your team?
+- Need an engineer who bridges backend reliability with modern AI?
 
-- Do you need help translating AI hype into real business results?
-
-- Want to implement AI effectively before competitors get ahead?
-
-- Looking for technical expertise and a clear roadmap for AI solutions?
-
-- Need someone who understands both technical and business perspectives?
-
-[Book Free Intro Call :material-arrow-top-right:](https://www.calendly.com){ .md-button .md-button--primary }
+[Book a free 30 min Intro Call :material-arrow-top-right:](https://calendar.app.google/APm8CTidVGbFPzTC7){ .md-button .md-button--primary }
 
 </div>
 
-<div class="profile-image-grid" markdown>
-
-![Dave Ebbelaar, AI Entrepreneur and Educator](assets/@daveebbelaar.jpg){ .profile-image alt="Portrait of Dave Ebbelaar, AI entrepreneur and educator" }
-
+<div class="hero-right">
+  <img src="assets/PHOTO-Gayithri-Pojoai copy.jpg" class="profile-image" alt="Portrait of Gayithri Ponnapalli, AI Engineer" />
 </div>
 
 </div>
 
 ## About me
 
-Hi! I'm Dave, an entrepreneur and educator from the Netherlands. I work with technical professionals facing the overwhelming pace of AI innovation and businesses struggling to translate AI hype into competitive advantage. Whether you're a developer watching your skills becoming obsolete or a company unsure how to implement AI effectively—the challenge is the same: how to effectively use this technology before your competitors do.
+ I help teams turn their data and existing systems into AI that actually works — RAG assistants that answer real questions, chatbots that handle real requests, and automation that cuts real manual work.
 
-My artificial intelligence journey spans over a decade, with bachelor's and master's degrees in the field and experience building custom data and AI systems across utilities, government, and e-commerce sectors. My tech stack includes Python, PostgreSQL, ML, FastAPI, OpenAI, Claude, Azure, vector databases, RAG, and LLM integration for enterprise applications.
+With 5 years of backend engineering experience at Walmart, Oracle, and VMware, I bring production discipline to AI development. After my early career in enterprise engineering, I took an intentional career break to raise my family, while actively upskilling in the later years — then returned to tech in 2025, hitting the ground running as a Software Developer at Walmart, before transitioning fully into AI engineering. I build with Python and FastAPI, and I'm focused on building reliable AI your team can depend on. I completed a rigorous, production-focused AI Engineering program at Datalumina where I deployed end-to-end AI applications with RAG, vector databases, and LLM orchestration.
 
-## Why work with me?
-
-Here's what sets me apart and how I can help drive value for your business:
+## What I work with
 
 <div class="grid cards" markdown>
 
--   :fontawesome-solid-building-user:{ .lg .middle } Proven Business Experience
+-   :material-robot:{ .lg .middle } AI & LLM Engineering
 
     ---
 
-    As the founder of Datalumina, I bring entrepreneurial insight to every project. I understand both the technical and business sides of AI implementation, ensuring solutions that deliver real ROI and align with your business goals.
+    RAG (Retrieval-Augmented Generation), LLM Orchestration & Evals, PydanticAI, LangChain, MCP (Model Context Protocol), Langfuse for observability.
 
--   :material-youtube:{ .lg .middle } Educator & Communicator
-
-    ---
-
-    My experience as a content creator and educator means I can break down complex technical concepts into clear, actionable insights. You'll always understand the 'why' behind technical decisions and get clear progress updates.
-
--   :material-school:{ .lg .middle } Industry Expert
+-   :material-language-python:{ .lg .middle } Backend Engineering
 
     ---
 
-    With over a decade in AI and data science, including work across utilities, government, and e-commerce sectors, I bring battle-tested expertise to your projects. My solutions are built on real-world experience, not just theory.
+    Python, FastAPI, Java, Spring Boot, Microservices, REST APIs, GraphQL, SQL/PLSQL — built for production from day one.
 
--   :material-rocket:{ .lg .middle } Fast Implementation
+-   :material-database:{ .lg .middle } Data & Infrastructure
 
     ---
 
-    I specialize in rapid development and deployment of AI solutions. Using modern tools and proven frameworks, I can help you move from concept to production faster, giving you a competitive edge in today's fast-paced market.
+    PostgreSQL with pgvector, AWS, Docker, Kubernetes, Grafana monitoring, GitHub Actions CI/CD.
+
+-   :material-code-braces:{ .lg .middle } Engineering Practices
+
+    ---
+
+    Pydantic for type safety, agile SDLC, AI-powered tooling (GitHub Copilot, MCP server, Qodo merge), automated testing.
 
 </div>
 
-## What my past clients say about my work
+## Experience highlights
 
-<div class="grid cards testimonials" markdown>
+<div class="grid cards" markdown>
 
--   :material-format-quote-open:{ .lg .middle } Adrian Dragomir
-    
-    Founder at Sferal
+-   :fontawesome-solid-brain:{ .lg .middle } Datalumina Certification — AI Engineer
 
-    ---
-
-    "Dave is a true professional and my collaboration with him has been flawless. **He took his time and spent 3 days with me and my team in Mamaia, Romania where he was a guest for 3 sessions of my podcast Waves of AI**. He is one of the most competent people I know that has a real understanding of how AI works and how to integrate it quickly in your company."
-
--   :material-format-quote-open:{ .lg .middle } Barbara van den Bosch
-    
-    Founder at Viverve
+    *Oct 2025 – Mar 2026 · San Jose, CA*
 
     ---
 
-    "Together with Datalumina, we developed a tailor-made program where I, as a school leader, can now bring together vast amounts of information in one place and automate key tasks. **Beyond the tremendous quality improvement for our organization, working with Datalumina was an extremely pleasant experience**."
+    Deployed end-to-end AI applications with RAG, pgvector, PydanticAI, and LLM orchestration. Built production-ready FastAPI backends with Pydantic type safety and Langfuse observability.
 
--   :material-format-quote-open:{ .lg .middle } Rene Raaphorst
-    
-    Founder at Crypto Insiders
+-   :fontawesome-solid-store:{ .lg .middle } Walmart — Software Developer
 
-    ---
-
-    "My experience with Datalumina has been excellent. **They think along with you every step of the way, from proof of concept to a fully functional product**. I was amazed by the quality of the results and found the collaboration very enjoyable. I highly recommend Dave and Datalumina to everyone!"
-
--   :material-format-quote-open:{ .lg .middle } Kelsen
-    
-    Founder at Datavisum
+    *Apr 2025 – Aug 2025 · Sunnyvale, CA*
 
     ---
 
-    "I am thankful for having come across Dave and Data Freelancer, it was one of the best investment decisions I've made in 2024. **From effective ways to create inbound marketing strategies using social media, through solution architecture design to address all kinds of business challenges**, you will extract a great deal of value from diverse perspectives."
+    Achieved a 20% performance boost migrating a core system to JDK 17 in 6 weeks. Led Spring Boot 2.5→3.3 upgrade improving startup time by 15%. Built features using Java 17, GraphQL, and RESTful APIs.
+
+-   :fontawesome-solid-cloud:{ .lg .middle } Oracle — Member of Technical Staff
+
+    *May 2015 – Dec 2015 · Santa Clara, CA*
+
+    ---
+
+    Built a Java-based framework for Oracle Public Cloud (HA), integrating Zookeeper, Nimbula, and NoSQL for scalable, high-availability data services.
+
+-   :fontawesome-solid-server:{ .lg .middle } VMware — Member of Technical Staff
+
+    *Aug 2013 – Apr 2015 · Palo Alto, CA*
+
+    ---
+
+    Developed an OO automation framework for vSphere storage using Java and VMware SDK, applying design patterns to build reusable regression suites.
 
 </div>
+
+## Certifications
+
+- **Datalumina Certified AI Engineer** — Mar 2026 · [View credential](https://www.credly.com/badges/9b47f9cc-d005-4cb4-a0df-e0afa19eb8f0/public_url)
+- **AWS Cloud Technical Essentials** — Feb 2024 · [View credential](https://coursera.org/verify/4Q8RHDA778MR)
+- **Oracle Certified Java Programmer 6.0** — Apr 2011
 
 ## Frequently asked questions
 
-??? note "How quickly can you start working on my project?"
-    I can typically begin new projects within 1-2 weeks of contract signing. For urgent matters, I maintain some flexibility for rapid response situations and can potentially start sooner - just let me know your timeline during our initial consultation.
+??? note "What types of AI projects do you work on?"
+    I focus on practical, production-grade AI: RAG-based assistants that retrieve and reason over your data, chatbots integrated into existing workflows, and automation pipelines that reduce manual work. I specialize in making AI reliable — not just impressive in a demo.
 
-??? note "Do you require a minimum project size or commitment?"
-    While I can accommodate projects of any size, I find that engagements of at least 20 hours allow for meaningful impact. This gives us enough time to understand your data, implement solutions, and deliver actionable results. We can start with a small pilot project to ensure we're a good fit.
+??? note "What is your tech stack?"
+    My primary stack for AI work is Python, FastAPI, PydanticAI, LangChain, PostgreSQL/pgvector, and AWS. For LLM observability I use Langfuse. My backend engineering background also covers Java, Spring Boot, Docker, and Kubernetes.
 
-??? note "What industries do you have experience in?"
-    I've successfully delivered projects across e-commerce, manufacturing, healthcare, and financial services. While I specialize in data science fundamentals that apply across sectors, I particularly excel in projects involving customer behavior analysis, process optimization, and predictive modeling.
+??? note "How do you ensure AI outputs are reliable?"
+    I implement LLM evaluation frameworks (evals), use Langfuse for observability and tracing, apply Pydantic for strict type safety, and design RAG pipelines with careful chunking and retrieval strategies. Reliability is a first-class concern, not an afterthought.
 
-??? note "How do you handle data security and confidentiality?"
-    I take data security extremely seriously. I sign comprehensive NDAs before starting any project, use enterprise-grade encryption for all data transfers, and follow industry best practices for data handling. I can also work within your existing security infrastructure and policies.
+??? note "Do you have backend engineering experience beyond AI?"
+    Yes — I have 5 years of backend engineering at companies like Walmart, Oracle, and VMware. I've led system migrations, performance optimizations, and feature development in Java, Spring Boot, and microservices architectures.
 
-??? note "What's your pricing structure?"
-    I offer both project-based and retainer pricing models. Project fees are based on scope, complexity, and value delivered rather than hours worked. For ongoing support, I offer flexible retainer packages. Let's discuss your specific needs during our consultation to determine the most cost-effective approach.
+??? note "Are you open to full-time roles or contract work?"
+    I am currently open to both. Feel free to reach out at gayithri@pojoai.com to discuss your needs.
 
-??? note "How do you communicate progress and results?"
-    I maintain clear communication through weekly progress updates and regular check-in meetings. You'll receive detailed documentation of all analyses, findings, and recommendations. For ongoing projects, I provide interactive dashboards and reports that allow you to track progress and results in real-time.
+??? note "What is your educational background?"
+    I hold a Bachelor of Science in Electrical, Electronics and Communications Engineering from Sri Venkateswara University College of Engineering (2008), and completed a production-focused AI Engineering program at Datalumina (2025–2026).
 
 
 <div class="grid cards" style="margin-top: 3rem" markdown>
 
--   :material-coffee:{ .lg .middle } Let's have a virtual coffee together!
+-   :material-email:{ .lg .middle } Let's connect!
 
     ---
-    
-    Want to see if we're a match? Let's have a chat and find out. Schedule a free 30-minute strategy session to discuss your AI challenges and explore how we can work together.
 
-    [Book Free Intro Call :material-arrow-top-right:](https://calendly.com){ .md-button .md-button--primary }
+    I'm open to discussing AI engineering opportunities, collaborations, or projects. Reach out and let's talk.
+
+    [Email Me :material-arrow-top-right:](mailto:gayithri@pojoai.com){ .md-button .md-button--primary }
 
 </div>

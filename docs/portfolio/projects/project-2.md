@@ -1,85 +1,75 @@
 ---
-title: Enterprise Chatbot for Company Y
-description: Development of a private ChatGPT-like tool for analyzing mobility data and policy evaluation in the public sector
+title: Walmart Core System Performance Overhaul
+description: Led JDK 17 migration for a 20% performance boost and Spring Boot 2.5→3.3 upgrade improving startup time by 15% at Walmart.
 ---
 
-# Enterprise Chatbot for the Company Y
+# Walmart Core System Performance Overhaul
 
 ??? tip "Portfolio Best Practices"
-    This is a simplified example project. When creating your own portfolio:
-    
-    - Include detailed technical challenges and how you solved them
-    - Add specific metrics and KPIs that demonstrate impact
-    - Show code snippets of interesting implementations
-    - Include architecture diagrams and system designs
-    - Document your decision-making process
-    - Highlight your specific contributions to the project
-    - Add visuals of the final product (if possible)
+    When creating your own portfolio entries, include specific metrics, your individual contributions, and the technical decisions that drove results — as shown below.
 
-!!! abstract "Case Study Summary"
-    **Client**: Dev X  
-    **Website**: [devx.com](https://devx.com)  
-    **Industry**: Software Development  
-    
-    **Impact Metrics**:
-    
-    - 90% reduction in customer service overhead (projected)
-    - 100% accuracy on initial evaluation datasets
-    - < 3 second response time for customer inquiries
-    - Successfully transitioned 12 CSRs to account management roles
-    - $240,000 annual cost savings in customer support operations
+!!! abstract "Project Summary"
+    **Company**: Walmart
+    **Location**: Sunnyvale, CA
+    **Duration**: Apr 2025 – Aug 2025
+    **Role**: Software Developer
 
-Company Y an AI project featuring a private ChatGPT-like tool, streamlining mobility data analysis and advancing digital innovation in public sector policy evaluation.
+    **Key Outcomes**:
+
+    - 20% performance boost via JDK 17 migration (completed in 6 weeks)
+    - 15% improvement in startup time via Spring Boot 2.5→3.3 upgrade
+    - Significantly improved maintainability and reliability of a core system
+    - New flagship feature delivered using Java 17, Spring Boot, GraphQL, and REST APIs
 
 ## Challenge
 
-The regional data team at Company Y faced the challenge of analyzing complex mobility data, including cars, bridges, traffic, and cyclists. Tasked with assessing policy compliance and the impact of changes, they struggled with data scattered across multiple systems, such as the Dexter portal's structured SQL data and various policy documents. This dispersion made analysis laborious, prompting the Province to explore how digitization and AI could streamline the process and foster innovation.
+A core production system at Walmart was running on an aging JDK version and an outdated Spring Boot release. This created performance bottlenecks, slowing response times and increasing startup overhead. Upgrading these systems required careful planning to avoid regressions in a high-traffic production environment.
 
-## Our Approach
+Additionally, the team needed new features delivered on a modern stack while developer productivity had to keep pace with fast-moving requirements.
 
-To tackle this challenge, we developed a custom-built AI solution similar to a "private version of ChatGPT." This tool was designed to access and analyze large volumes of PDF documents and structured data exported from the Dexter database. By enabling a ChatGPT-like interaction, users could query this diverse data pool in a conversational manner, leveraging the AI to gain company-specific insights.
+## Approach
+
+**JDK 17 Migration**: Analyzed the existing codebase for deprecated APIs and compatibility issues, created a migration plan, and executed the upgrade within 6 weeks. Ran comprehensive regression testing to validate no functional regressions were introduced.
+
+**Spring Boot Upgrade (2.5→3.3)**: Led the upgrade of the core system, addressing breaking changes in Spring Security, Jakarta EE namespace migration, and dependency compatibility. This was a more complex upgrade given the major version jump.
+
+**New Feature Development**: Designed and implemented a new feature for a flagship product using Java 17, Spring Boot, GraphQL, and RESTful APIs — delivering in an agile SDLC with iterative sprints.
+
+**AI-Powered Developer Productivity**: Leveraged GitHub Copilot, MCP server, and Qodo merge to streamline code design and review, supporting the broader team in delivering features faster.
 
 ## Results & Impact
 
-- Successfully integrated structured SQL data and unstructured PDF documents
-- Featured in major company meetings
-- Enabled conversational querying of complex mobility data
-- Streamlined policy compliance assessment
-- Enhanced decision-making through comprehensive data analysis
-
-## Solution Overview
-
-![Architecture Diagram](../../assets/openai-end-to-end-aml-deployment.svg)
-
-*Baseline OpenAI end-to-end chat reference architecture*
+- **20% performance boost** on core system after JDK 17 migration
+- **15% faster startup time** after Spring Boot 2.5→3.3 upgrade
+- Significantly improved long-term maintainability and reliability
+- New flagship feature shipped on modern Java 17 stack
+- Improved team developer productivity through AI-powered tooling
 
 ## Tech Stack
 
-- OpenAI
-- Pinecone vector database
-- Microsoft Azure cloud infrastructure
-- Python backend services
-- FastAPI for RESTful endpoints
-- Docker containerization
-- GitHub Actions for CI/CD pipeline
+- Java 17
+- Spring Boot 3.3
+- GraphQL
+- RESTful APIs
+- GitHub Copilot / MCP server / Qodo merge
+- Agile SDLC
+- CI/CD pipelines
 
 ## Additional Context
 
-- Timeline: 3 months
-- Team Size: 2 people
-- Role: AI Engineer
-- Expertise in custom chatbot development
-- Specialization in retrieval-augmented generation
-- Focus on OpenAI model integration
+- Timeline: 5 months
+- Role: Software Developer (individual contributor)
+- JDK migration completed in 6 weeks
+- Worked cross-functionally in an agile team
 
 <div class="grid cards" style="margin-top: 3rem" markdown>
 
--   :material-coffee:{ .lg .middle } Let's have a virtual coffee together!
+-   :material-email:{ .lg .middle } Want to learn more?
 
     ---
-    
-    Want to see if we're a match? Let's have a chat and find out. Schedule a free 30-minute strategy session to discuss your AI challenges and explore how we can work together.
 
-    [Book Free Intro Call :material-arrow-top-right:](https://calendly.com){ .md-button .md-button--primary }
+    Reach out if you'd like to discuss backend engineering, system migrations, or AI-assisted development.
+
+    [Email Me :material-arrow-top-right:](mailto:gayithri@pojoai.com){ .md-button .md-button--primary }
 
 </div>
