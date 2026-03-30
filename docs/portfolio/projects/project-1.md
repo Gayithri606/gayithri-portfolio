@@ -9,9 +9,9 @@ description: A production-ready Retrieval-Augmented Generation application built
     This project was built as part of the Datalumina AI Engineering program — a production-focused curriculum designed to bridge backend engineering with modern Generative AI.
 
 !!! abstract "Project Summary"
-    **Program**: Datalumina AI Engineering
+    **Program**: Datalumina Certified AI Engineer Expert
     **Duration**: Oct 2025 – Mar 2026
-    **Role**: AI Engineer
+    **Role**: AI Engineer Trainee
 
     **Key Outcomes**:
 
