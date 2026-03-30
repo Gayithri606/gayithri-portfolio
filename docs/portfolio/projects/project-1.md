@@ -15,7 +15,8 @@ description: A production-ready AI Customer Support Automation Platform,  built 
 
     **Key Outcomes**:
 
-    - End-to-end RAG application deployed in a production-like environment
+    - End-to-end AI Customer Support Automation Platform application deployed in a production-       like environment
+    - RAG pipeline built using postgreSQL
     - Full LLM observability with Langfuse tracing
     - Type-safe AI pipelines using Pydantic
     - Sub-second retrieval from PostgreSQL/pgvector
