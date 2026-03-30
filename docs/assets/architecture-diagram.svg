@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1380 960" width="1380" height="960" font-family="'Segoe UI', Arial, sans-serif">
+<rect width="1380" height="960" fill="#F2F5F9"/>
+<text x="690" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#1A2B45">GenAI Launchpad — System Architecture</text>
+<text x="690" y="58" text-anchor="middle" font-size="12" font-weight="normal" fill="#6B7A8D">Event-Driven RAG Platform  ·  Python · pydantic-ai · pgvector · Langfuse  ·  Docker Compose on Hetzner Cloud</text>
+<rect x="560" y="72" width="260" height="48" rx="8" fill="#1A2B45" stroke="#0D1B30" stroke-width="1.5"/>
+<text x="690" y="92" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">🌐  INTERNET</text>
+<text x="690" y="110" text-anchor="middle" font-size="10" font-weight="normal" fill="#90A4C0">HTTPS · port 443</text>
+<rect x="18" y="138" width="1344" height="718" rx="8" fill="#EEF4FB" stroke="#2B7FC9" stroke-width="2"/>
+<rect x="18" y="138" width="1344" height="26" rx="8" fill="#1B4F8A" stroke="#2B7FC9" stroke-width="2"/>
+<rect x="18" y="151" width="1344" height="13" fill="#1B4F8A"/>
+<text x="690" y="156" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">☁  HETZNER CLOUD VPS  —  Docker Compose Stack</text>
+<text x="1348" y="155" text-anchor="end" font-size="9" font-weight="normal" fill="#90BDE0" font-style="italic">Isolated bridge network  ·  Persistent volumes: db-data, redis-data</text>
+<defs><marker id="inet_cad" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+  <polygon points="0 0, 8 3, 0 6" fill="#2B7FC9"/>
+</marker></defs>
+<line x1="690" y1="120" x2="690" y2="165" stroke="#2B7FC9" stroke-width="2" marker-end="url(#inet_cad)"/>
+<text x="700" y="155" text-anchor="middle" font-size="9" font-weight="normal" fill="#2B7FC9" font-style="italic">HTTPS</text>
+<rect x="38" y="170" width="1304" height="68" rx="8" fill="#DDEAF8" stroke="#2B7FC9" stroke-width="2"/>
+<rect x="38" y="170" width="1304" height="26" rx="8" fill="#1B5EA8" stroke="#2B7FC9" stroke-width="2"/>
+<rect x="38" y="183" width="1304" height="13" fill="#1B5EA8"/>
+<text x="690" y="188" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">⬡  CADDY — Reverse Proxy  ·  Auto-SSL via Let's Encrypt</text>
+<text x="690" y="222" text-anchor="middle" font-size="10" font-weight="normal" fill="#2B5EA8">api.domain.com  →  FastAPI :8080     ·     supabase.domain.com  →  Kong :8000     ·     Zero-config TLS renewal</text>
+<rect x="38" y="255" width="1304" height="78" rx="6" fill="#F0F2F5" stroke="#B0BAC5" stroke-width="1.5" stroke-dasharray="6,3"/>
+<text x="48" y="269" text-anchor="start" font-size="9" font-weight="bold" fill="#8A96A3" font-style="italic">Infrastructure Layer</text>
+<rect x="50" y="277" width="270" height="48" rx="5" fill="#C8D0DA" stroke="#B0BAC5" stroke-width="1"/>
+<text x="185" y="296" text-anchor="middle" font-size="9" font-weight="bold" fill="#4A5568">FastAPI  +  Uvicorn  ·  :8080</text>
+<text x="185" y="310" text-anchor="middle" font-size="8" font-weight="normal" fill="#6B7A8D">POST /events/  ·  POST /v1/chat/completions</text>
+<rect x="336" y="277" width="200" height="48" rx="5" fill="#C8D0DA" stroke="#B0BAC5" stroke-width="1"/>
+<text x="436" y="296" text-anchor="middle" font-size="9" font-weight="bold" fill="#4A5568">Redis  —  Broker</text>
+<text x="436" y="310" text-anchor="middle" font-size="8" font-weight="normal" fill="#6B7A8D">Celery task queue</text>
+<rect x="552" y="277" width="200" height="48" rx="5" fill="#C8D0DA" stroke="#B0BAC5" stroke-width="1"/>
+<text x="652" y="296" text-anchor="middle" font-size="9" font-weight="bold" fill="#4A5568">Celery Worker</text>
+<text x="652" y="310" text-anchor="middle" font-size="8" font-weight="normal" fill="#6B7A8D">Async workflow dispatch</text>
+<rect x="768" y="277" width="200" height="48" rx="5" fill="#C8D0DA" stroke="#B0BAC5" stroke-width="1"/>
+<text x="868" y="296" text-anchor="middle" font-size="9" font-weight="bold" fill="#4A5568">Supabase Stack</text>
+<text x="868" y="310" text-anchor="middle" font-size="8" font-weight="normal" fill="#6B7A8D">Kong · GoTrue · PostgREST · Studio</text>
+<defs><marker id="infra_wf" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+  <polygon points="0 0, 8 3, 0 6" fill="#8A96A3"/>
+</marker></defs>
+<line x1="752" y1="333" x2="752" y2="350" stroke="#8A96A3" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#infra_wf)"/>
+<rect x="38" y="350" width="840" height="340" rx="8" fill="#E6EFF8" stroke="#3A7EC9" stroke-width="2"/>
+<rect x="38" y="350" width="840" height="26" rx="8" fill="#1B4F8A" stroke="#3A7EC9" stroke-width="2"/>
+<rect x="38" y="363" width="840" height="13" fill="#1B4F8A"/>
+<text x="458" y="368" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">⚙  Workflow Engine  —  Node Graph Execution</text>
+<rect x="52" y="388" width="240" height="120" rx="8" fill="#D8E8F5" stroke="#3A7EC9" stroke-width="2"/>
+<rect x="52" y="388" width="240" height="24" rx="8" fill="#1B5EA8" stroke="#3A7EC9" stroke-width="2"/>
+<rect x="52" y="400" width="240" height="12" fill="#1B5EA8"/>
+<text x="172" y="405" text-anchor="middle" font-size="11" font-weight="bold" fill="#FFFFFF">⚡  Concurrent Node</text>
+<text x="172" y="434" text-anchor="middle" font-size="9" font-weight="normal" fill="#1A3A6B">Fan-out parallel analysis:</text>
+<text x="172" y="448" text-anchor="middle" font-size="9" font-weight="normal" fill="#1A3A6B">·  DetermineIntentNode</text>
+<text x="172" y="462" text-anchor="middle" font-size="9" font-weight="normal" fill="#1A3A6B">·  FilterSpamNode</text>
+<text x="172" y="476" text-anchor="middle" font-size="9" font-weight="normal" fill="#1A3A6B">·  ValidateTicketNode</text>
+<text x="172" y="494" text-anchor="middle" font-size="8" font-weight="normal" fill="#4A6A9B" font-style="italic">pydantic-ai  ·  structured outputs</text>
+<defs><marker id="con_rag" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+  <polygon points="0 0, 8 3, 0 6" fill="#0A4A8C"/>
+</marker></defs>
+<line x1="292" y1="448" x2="336" y2="448" stroke="#0A4A8C" stroke-width="2" marker-end="url(#con_rag)"/>
+<text x="298" y="440" text-anchor="middle" font-size="9" font-weight="normal" fill="#0A4A8C" font-style="italic">intent + analysis context</text>
+<rect x="342" y="388" width="270" height="136" rx="8" fill="#C6DDF4" stroke="#0F5FA8" stroke-width="2"/>
+<rect x="342" y="388" width="270" height="26" rx="8" fill="#0A4A8C" stroke="#0F5FA8" stroke-width="2"/>
+<rect x="342" y="401" width="270" height="13" fill="#0A4A8C"/>
+<text x="477" y="406" text-anchor="middle" font-size="11" font-weight="bold" fill="#FFFFFF">🔍  RAG Retrieval Node</text>
+<rect x="350" y="420" width="254" height="36" rx="5" fill="#0A4A8C" stroke="#0A3366" stroke-width="1"/>
+<rect x="350" y="420" width="22" height="36" rx="5" fill="#083A72" stroke="#0A3366" stroke-width="0"/>
+<text x="361" y="442" text-anchor="middle" font-size="10" font-weight="bold" fill="#FFFFFF">①</text>
+<text x="491" y="434" text-anchor="middle" font-size="9" font-weight="bold" fill="#FFFFFF">Embed Query</text>
+<text x="491" y="448" text-anchor="middle" font-size="8" font-weight="normal" fill="#B0CDE8">text → float[1536] vector</text>
+<rect x="350" y="464" width="254" height="36" rx="5" fill="#0A4A8C" stroke="#0A3366" stroke-width="1"/>
+<rect x="350" y="464" width="22" height="36" rx="5" fill="#083A72" stroke="#0A3366" stroke-width="0"/>
+<text x="361" y="486" text-anchor="middle" font-size="10" font-weight="bold" fill="#FFFFFF">②</text>
+<text x="491" y="478" text-anchor="middle" font-size="9" font-weight="bold" fill="#FFFFFF">Vector Search</text>
+<text x="491" y="492" text-anchor="middle" font-size="8" font-weight="normal" fill="#B0CDE8">pgvector cosine ⟺ LIMIT 5</text>
+<text x="477" y="516" text-anchor="middle" font-size="8" font-weight="normal" fill="#0A3A70" font-style="italic">Top-K semantically similar chunks retrieved</text>
+<defs><marker id="rag_llm" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+  <polygon points="0 0, 8 3, 0 6" fill="#1B4F8A"/>
+</marker></defs>
+<line x1="612" y1="456" x2="656" y2="456" stroke="#1B4F8A" stroke-width="2" marker-end="url(#rag_llm)"/>
+<text x="618" y="448" text-anchor="middle" font-size="9" font-weight="normal" fill="#1B4F8A" font-style="italic">retrieved context chunks</text>
+<rect x="662" y="378" width="256" height="204" rx="8" fill="#1B4F8A" stroke="#0A3366" stroke-width="2"/>
+<rect x="662" y="378" width="256" height="28" rx="8" fill="#0A2D5C" stroke="#0A3366" stroke-width="2"/>
+<rect x="662" y="392" width="256" height="14" fill="#0A2D5C"/>
+<text x="790" y="397" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">🤖  Agent Node  (LLM)</text>
+<text x="790" y="422" text-anchor="middle" font-size="9" font-weight="bold" fill="#B0CCE8">Jinja2 prompt  +  RAG context</text>
+<text x="790" y="436" text-anchor="middle" font-size="9" font-weight="normal" fill="#90B8DC">pydantic-ai  →  structured output</text>
+<text x="790" y="450" text-anchor="middle" font-size="8" font-weight="normal" fill="#6A98C0" font-style="italic">{ reasoning, response, confidence }</text>
+<rect x="670" y="460" width="76" height="28" rx="4" fill="#2B6CB0" stroke="#1A4A80" stroke-width="1"/>
+<text x="708" y="472" text-anchor="middle" font-size="8" font-weight="bold" fill="#FFFFFF">OpenAI</text>
+<text x="708" y="484" text-anchor="middle" font-size="7" font-weight="normal" fill="#90B8DC">gpt-4.1</text>
+<rect x="752" y="460" width="76" height="28" rx="4" fill="#2B6CB0" stroke="#1A4A80" stroke-width="1"/>
+<text x="790" y="472" text-anchor="middle" font-size="8" font-weight="bold" fill="#FFFFFF">Anthropic</text>
+<text x="790" y="484" text-anchor="middle" font-size="7" font-weight="normal" fill="#90B8DC">Claude</text>
+<rect x="834" y="460" width="76" height="28" rx="4" fill="#2B6CB0" stroke="#1A4A80" stroke-width="1"/>
+<text x="872" y="472" text-anchor="middle" font-size="8" font-weight="bold" fill="#FFFFFF">Gemini</text>
+<text x="872" y="484" text-anchor="middle" font-size="7" font-weight="normal" fill="#90B8DC">Vertex AI</text>
+<rect x="670" y="494" width="76" height="28" rx="4" fill="#2B6CB0" stroke="#1A4A80" stroke-width="1"/>
+<text x="708" y="506" text-anchor="middle" font-size="8" font-weight="bold" fill="#FFFFFF">Azure OAI</text>
+<text x="708" y="518" text-anchor="middle" font-size="7" font-weight="normal" fill="#90B8DC">OpenAI svc</text>
+<rect x="752" y="494" width="76" height="28" rx="4" fill="#2B6CB0" stroke="#1A4A80" stroke-width="1"/>
+<text x="790" y="506" text-anchor="middle" font-size="8" font-weight="bold" fill="#FFFFFF">Mistral</text>
+<text x="790" y="518" text-anchor="middle" font-size="7" font-weight="normal" fill="#90B8DC">mistral-lg</text>
+<rect x="834" y="494" width="76" height="28" rx="4" fill="#2B6CB0" stroke="#1A4A80" stroke-width="1"/>
+<text x="872" y="506" text-anchor="middle" font-size="8" font-weight="bold" fill="#FFFFFF">Bedrock</text>
+<text x="872" y="518" text-anchor="middle" font-size="7" font-weight="normal" fill="#90B8DC">AWS</text>
+<rect x="670" y="528" width="76" height="28" rx="4" fill="#2B6CB0" stroke="#1A4A80" stroke-width="1"/>
+<text x="708" y="540" text-anchor="middle" font-size="8" font-weight="bold" fill="#FFFFFF">Ollama</text>
+<text x="708" y="552" text-anchor="middle" font-size="7" font-weight="normal" fill="#90B8DC">local</text>
+<text x="790" y="566" text-anchor="middle" font-size="8" font-weight="normal" fill="#5A88B0" font-style="italic">8 providers  ·  swap with 1 config change</text>
+<defs><marker id="llm_rtr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+  <polygon points="0 0, 8 3, 0 6" fill="#1B4F8A"/>
+</marker></defs>
+<line x1="790" y1="582" x2="790" y2="624" stroke="#1B4F8A" stroke-width="2" marker-end="url(#llm_rtr)"/>
+<text x="796" y="600" text-anchor="middle" font-size="9" font-weight="normal" fill="#1B4F8A" font-style="italic">structured response</text>
+<rect x="662" y="630" width="256" height="92" rx="8" fill="#D0E4F5" stroke="#2B7FC9" stroke-width="2"/>
+<rect x="662" y="630" width="256" height="24" rx="8" fill="#1B5EA8" stroke="#2B7FC9" stroke-width="2"/>
+<rect x="662" y="642" width="256" height="12" fill="#1B5EA8"/>
+<text x="790" y="647" text-anchor="middle" font-size="11" font-weight="bold" fill="#FFFFFF">↪  Router Node  —  Intent Dispatch</text>
+<text x="674" y="662" text-anchor="start" font-size="9" font-weight="bold" fill="#1A4A80">spam &gt; 0.8</text>
+<text x="908" y="662" text-anchor="end" font-size="9" font-weight="normal" fill="#0A3A70">→  CloseTicket</text>
+<text x="674" y="678" text-anchor="start" font-size="9" font-weight="bold" fill="#1A4A80">escalate</text>
+<text x="908" y="678" text-anchor="end" font-size="9" font-weight="normal" fill="#0A3A70">→  EscalateTicket</text>
+<text x="674" y="694" text-anchor="start" font-size="9" font-weight="bold" fill="#1A4A80">BILLING</text>
+<text x="908" y="694" text-anchor="end" font-size="9" font-weight="normal" fill="#0A3A70">→  ProcessInvoice</text>
+<text x="674" y="710" text-anchor="start" font-size="9" font-weight="bold" fill="#1A4A80">default</text>
+<text x="908" y="710" text-anchor="end" font-size="9" font-weight="normal" fill="#0A3A70">→  GenerateResponse</text>
+<rect x="900" y="350" width="460" height="200" rx="8" fill="#DCE9F6" stroke="#2B6CB0" stroke-width="2"/>
+<rect x="900" y="350" width="460" height="26" rx="8" fill="#1A4A80" stroke="#2B6CB0" stroke-width="2"/>
+<rect x="900" y="363" width="460" height="13" fill="#1A4A80"/>
+<text x="1130" y="368" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">🐘  PostgreSQL 15 + pgvector  (Supabase)</text>
+<rect x="912" y="386" width="436" height="72" rx="5" fill="#C6D9EE" stroke="#2B6CB0" stroke-width="1"/>
+<text x="1130" y="402" text-anchor="middle" font-size="10" font-weight="bold" fill="#0A2D5C">Vector Store  —  RAG Knowledge Base</text>
+<text x="1130" y="416" text-anchor="middle" font-size="9" font-weight="normal" fill="#1A4A80">knowledge_base  ·  embedding ⟺ query_vec</text>
+<text x="1130" y="430" text-anchor="middle" font-size="9" font-weight="normal" fill="#2B5EA8">ORDER BY cosine similarity  LIMIT 5</text>
+<text x="1130" y="446" text-anchor="middle" font-size="8" font-weight="normal" fill="#4A6A9B" font-style="italic">text-embedding-3-small  ·  float[1536]</text>
+<rect x="912" y="468" width="436" height="66" rx="5" fill="#C6D9EE" stroke="#2B6CB0" stroke-width="1"/>
+<text x="1130" y="484" text-anchor="middle" font-size="10" font-weight="bold" fill="#0A2D5C">Event Store  +  Auth  +  State</text>
+<text x="1130" y="500" text-anchor="middle" font-size="9" font-weight="normal" fill="#1A4A80">events  ·  task_context JSON  ·  results</text>
+<text x="1130" y="516" text-anchor="middle" font-size="9" font-weight="normal" fill="#2B5EA8">auth / storage schemas  (Supabase-managed)</text>
+<text x="1130" y="528" text-anchor="middle" font-size="8" font-weight="normal" fill="#4A6A9B" font-style="italic">port 5432 internal  ·  Persistent volume: db-data</text>
+<defs><marker id="rag_pg" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+  <polygon points="0 0, 8 3, 0 6" fill="#0A4A8C"/>
+</marker></defs>
+<polyline points="477,690 477,712 1130,712 1130,548" fill="none" stroke="#0A4A8C" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#rag_pg)"/>
+<text x="803" y="707" text-anchor="middle" font-size="9" font-weight="normal" fill="#0A4A8C" font-style="italic">vector similarity search</text>
+<defs><marker id="wf_pg" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+  <polygon points="0 0, 8 3, 0 6" fill="#2B7FC9"/>
+</marker></defs>
+<line x1="878" y1="580" x2="898" y2="580" stroke="#2B7FC9" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#wf_pg)"/>
+<text x="839" y="574" text-anchor="middle" font-size="9" font-weight="normal" fill="#2B7FC9" font-style="italic">write events / results</text>
+<rect x="18" y="878" width="560" height="100" rx="8" fill="#E8ECF2" stroke="#8A96A3" stroke-width="2"/>
+<rect x="18" y="878" width="560" height="26" rx="8" fill="#4A5568" stroke="#8A96A3" stroke-width="2"/>
+<rect x="18" y="891" width="560" height="13" fill="#4A5568"/>
+<text x="298" y="896" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">LLM Provider APIs  (External)</text>
+<rect x="30" y="912" width="70" height="52" rx="5" fill="#C8D0DA" stroke="#8A96A3" stroke-width="1"/>
+<text x="65" y="942" text-anchor="middle" font-size="9" font-weight="bold" fill="#4A5568">OpenAI</text>
+<rect x="107" y="912" width="70" height="52" rx="5" fill="#C8D0DA" stroke="#8A96A3" stroke-width="1"/>
+<text x="142" y="942" text-anchor="middle" font-size="9" font-weight="bold" fill="#4A5568">Anthropic</text>
+<rect x="184" y="912" width="70" height="52" rx="5" fill="#C8D0DA" stroke="#8A96A3" stroke-width="1"/>
+<text x="219" y="942" text-anchor="middle" font-size="9" font-weight="bold" fill="#4A5568">Google Gemini</text>
+<rect x="261" y="912" width="70" height="52" rx="5" fill="#C8D0DA" stroke="#8A96A3" stroke-width="1"/>
+<text x="296" y="942" text-anchor="middle" font-size="9" font-weight="bold" fill="#4A5568">Azure OpenAI</text>
+<rect x="338" y="912" width="70" height="52" rx="5" fill="#C8D0DA" stroke="#8A96A3" stroke-width="1"/>
+<text x="373" y="942" text-anchor="middle" font-size="9" font-weight="bold" fill="#4A5568">Mistral</text>
+<rect x="415" y="912" width="70" height="52" rx="5" fill="#C8D0DA" stroke="#8A96A3" stroke-width="1"/>
+<text x="450" y="942" text-anchor="middle" font-size="9" font-weight="bold" fill="#4A5568">AWS Bedrock</text>
+<rect x="492" y="912" width="70" height="52" rx="5" fill="#C8D0DA" stroke="#8A96A3" stroke-width="1"/>
+<text x="527" y="942" text-anchor="middle" font-size="9" font-weight="bold" fill="#4A5568">Ollama</text>
+<defs><marker id="llm_ext" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+  <polygon points="0 0, 8 3, 0 6" fill="#4A5568"/>
+</marker></defs>
+<polyline points="790,856 790,928 576,928" fill="none" stroke="#4A5568" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#llm_ext)"/>
+<text x="583" y="932" text-anchor="middle" font-size="9" font-weight="normal" fill="#4A5568" font-style="italic">LLM API calls</text>
+<rect x="598" y="878" width="764" height="100" rx="8" fill="#FEF6EC" stroke="#C96A1A" stroke-width="2"/>
+<rect x="598" y="878" width="764" height="28" rx="8" fill="#9C4D0F" stroke="#C96A1A" stroke-width="2"/>
+<rect x="598" y="892" width="764" height="14" fill="#9C4D0F"/>
+<text x="980" y="897" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">📊  Langfuse Cloud  —  Full Observability</text>
+<rect x="612" y="914" width="138" height="52" rx="5" fill="#FEF0DA" stroke="#C96A1A" stroke-width="1"/>
+<text x="681" y="933" text-anchor="middle" font-size="9" font-weight="bold" fill="#7A3B0A">Traces &amp; Spans</text>
+<text x="681" y="949" text-anchor="middle" font-size="8" font-weight="normal" fill="#9C5225">Full workflow audit trail</text>
+<rect x="759" y="914" width="138" height="52" rx="5" fill="#FEF0DA" stroke="#C96A1A" stroke-width="1"/>
+<text x="828" y="933" text-anchor="middle" font-size="9" font-weight="bold" fill="#7A3B0A">Token Metrics</text>
+<text x="828" y="949" text-anchor="middle" font-size="8" font-weight="normal" fill="#9C5225">Usage · Cost per step</text>
+<rect x="906" y="914" width="138" height="52" rx="5" fill="#FEF0DA" stroke="#C96A1A" stroke-width="1"/>
+<text x="975" y="933" text-anchor="middle" font-size="9" font-weight="bold" fill="#7A3B0A">Latency Tracking</text>
+<text x="975" y="949" text-anchor="middle" font-size="8" font-weight="normal" fill="#9C5225">Per node · per workflow</text>
+<rect x="1053" y="914" width="138" height="52" rx="5" fill="#FEF0DA" stroke="#C96A1A" stroke-width="1"/>
+<text x="1122" y="933" text-anchor="middle" font-size="9" font-weight="bold" fill="#7A3B0A">Error Monitoring</text>
+<text x="1122" y="949" text-anchor="middle" font-size="8" font-weight="normal" fill="#9C5225">Error rate · Debug replay</text>
+<rect x="1200" y="914" width="138" height="52" rx="5" fill="#FEF0DA" stroke="#C96A1A" stroke-width="1"/>
+<text x="1269" y="933" text-anchor="middle" font-size="9" font-weight="bold" fill="#7A3B0A">Prompt Versioning</text>
+<text x="1269" y="949" text-anchor="middle" font-size="8" font-weight="normal" fill="#9C5225">Template management</text>
+<text x="1352" y="898" text-anchor="end" font-size="9" font-weight="normal" fill="#C96A1A" font-style="italic">enable_tracing=True</text>
+<defs><marker id="wf_lf" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+  <polygon points="0 0, 8 3, 0 6" fill="#C96A1A"/>
+</marker></defs>
+<polyline points="848,856 848,928 596,928" fill="none" stroke="#C96A1A" stroke-width="2.5" marker-end="url(#wf_lf)"/>
+<text x="643" y="918" text-anchor="middle" font-size="9" font-weight="normal" fill="#C96A1A" font-style="italic">all LLM calls · spans · token metrics  →  flushed async</text>
+<defs><marker id="pg_lf" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+  <polygon points="0 0, 8 3, 0 6" fill="#C96A1A"/>
+</marker></defs>
+<polyline points="1130,856 1130,928 1360,928" fill="none" stroke="#C96A1A" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#pg_lf)"/>
+<defs><marker id="cad_infra" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+  <polygon points="0 0, 8 3, 0 6" fill="#2B7FC9"/>
+</marker></defs>
+<line x1="690" y1="238" x2="690" y2="253" stroke="#2B7FC9" stroke-width="2" marker-end="url(#cad_infra)"/>
+<rect x="1210" y="878" width="152" height="100" rx="6" fill="#FFFFFF" stroke="#C0CAD4" stroke-width="1"/>
+<text x="1286" y="894" text-anchor="middle" font-size="10" font-weight="bold" fill="#4A5568">Legend</text>
+<rect x="1220" y="899" width="12" height="10" fill="#2B7FC9" rx="2"/>
+<text x="1238" y="908" text-anchor="start" font-size="8" font-weight="normal" fill="#4A5568">Infra / Routing</text>
+<rect x="1220" y="914" width="12" height="10" fill="#0A4A8C" rx="2"/>
+<text x="1238" y="923" text-anchor="start" font-size="8" font-weight="normal" fill="#4A5568">RAG Pipeline</text>
+<rect x="1220" y="929" width="12" height="10" fill="#1B4F8A" rx="2"/>
+<text x="1238" y="938" text-anchor="start" font-size="8" font-weight="normal" fill="#4A5568">LLM Orchestration</text>
+<rect x="1220" y="944" width="12" height="10" fill="#C96A1A" rx="2"/>
+<text x="1238" y="953" text-anchor="start" font-size="8" font-weight="normal" fill="#4A5568">Observability</text>
+<rect x="1220" y="959" width="12" height="10" fill="#8A96A3" rx="2"/>
+<text x="1238" y="968" text-anchor="start" font-size="8" font-weight="normal" fill="#4A5568">Supporting services</text>
+</svg>

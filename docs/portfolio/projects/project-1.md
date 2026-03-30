@@ -41,7 +41,7 @@ The backend was built with FastAPI and Python, with PydanticAI ensuring type saf
 
 ## Solution Overview
 
-![Architecture Diagram](../../assets/openai-end-to-end-aml-deployment.svg)
+![Architecture Diagram](../../assets/architecture-diagram.svg)
 
 *End-to-end RAG architecture with retrieval, LLM orchestration, and observability*
 
