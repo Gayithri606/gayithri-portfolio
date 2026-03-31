@@ -78,7 +78,7 @@ The full stack runs as a six-service Docker Compose project (FastAPI, Celery, Po
 
 ## Solution Overview
 
-![Architecture Diagram](../../assets/architecture-diagram.svg)
+![Architecture Diagram](../../assets/pojoai-architecture.svg)
 
 *End-to-end RAG architecture with retrieval, LLM orchestration, and observability*
 
