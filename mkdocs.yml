@@ -8,9 +8,9 @@ nav:
   - Case Studies:
     - Overview: portfolio/index.md
     - Projects:
-      - portfolio/projects/project-1.md
-      - portfolio/projects/project-2.md
       - portfolio/projects/project-3.md
+      - portfolio/projects/project-2.md
+      # - portfolio/projects/project-1.md  # Uncomment to re-add Project 1
   - Blog:
     - blog/index.md 
 
