@@ -22,4 +22,10 @@ A collection of AI engineering and backend development projects demonstrating re
 
     Led the JDK 17 migration delivering a 20% performance boost in 6 weeks, followed by a Spring Boot 2.5→3.3 upgrade that improved startup time by 15% and significantly improved system maintainability.
 
+-   [AI Executive Assistant — Intelligent Email Automation Platform](projects/project-3.md)
+
+    ---
+
+    A production-grade, event-driven AI platform that autonomously monitors inboxes, classifies emails, and takes intelligent action — built with FastAPI, Celery, PostgreSQL/pgvector, PydanticAI, and Langfuse for full observability.
+
 </div>

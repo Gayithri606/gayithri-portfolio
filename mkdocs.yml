@@ -10,6 +10,7 @@ nav:
     - Projects:
       - portfolio/projects/project-1.md
       - portfolio/projects/project-2.md
+      - portfolio/projects/project-3.md
   - Blog:
     - blog/index.md 
 
