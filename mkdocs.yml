@@ -1,6 +1,6 @@
 site_name: Gayithri Ponnapalli
 site_description: AI Engineer helping teams build reliable RAG assistants, chatbots, and AI automation using Python, FastAPI, and LLMs.
-site_url: https://yourdomain.com
+site_url: https://gayithriponnapalli.com
 
 nav:
   - Home:
@@ -8,6 +8,7 @@ nav:
   - Case Studies:
     - Overview: portfolio/index.md
     - Projects:
+      - portfolio/projects/project-4.md
       - portfolio/projects/project-3.md
       - portfolio/projects/project-2.md
       # - portfolio/projects/project-1.md  # Uncomment to re-add Project 1

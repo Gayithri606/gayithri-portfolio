@@ -6,6 +6,7 @@ categories:
   - AI Engineering
   - Backend Engineering
 description: How five years of backend engineering at Walmart, Oracle, and VMware built the foundation for building production AI systems.
+draft: true
 ---
 
 # What Five Years of Backend Engineering Taught Me About Building AI That Works

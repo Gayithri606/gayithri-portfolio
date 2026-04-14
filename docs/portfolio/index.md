@@ -18,6 +18,12 @@ A collection of AI engineering and backend development projects demonstrating re
     A production-ready AI Customer Support Automation Platform, built with FastAPI, PostgreSQL/pgvector for RAG, PydanticAI, and Langfuse for LLM observability.
 -->
 
+-   [AI Document Q&A System — Production-Grade RAG Pipeline](projects/project-4.md)
+
+    ---
+
+    A production-ready RAG pipeline for natural-language Q&A over PDF and DOCX documents — built with FastAPI, Celery, TimescaleDB/pgvectorscale, Docling, Instructor, and Langfuse for full observability.
+
 -   [AI Executive Assistant — Intelligent Email Automation Platform](projects/project-3.md)
 
     ---
