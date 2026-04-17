@@ -10,13 +10,17 @@ description: A walkthrough of a production-grade RAG pipeline for document Q&A �
 
 # How I Built a Production-Ready AI Document Q&A System — And What Makes It Different
 
-Almost every client I talk to has some version of the same complaint. "We have all the information. We just can't find it fast enough." The contract is somewhere on the shared drive. The policy update is buried in the third revision of a 40-page PDF. Someone on the team spends two hours digging through a report to answer a question that, honestly, should take two minutes.
+Almost every client I talk to has some version of the same problem. "We have all the information. We just can't find it fast enough." The contract is somewhere on the shared drive. The policy update is buried in the third revision of a 40-page PDF. Someone on the team spends two hours digging through a report to answer a question that, honestly, should take two minutes.
 
 AI is supposed to fix this. And sometimes it does — but a lot of what I see out there is either a weekend notebook pretending to be a product, or a flashy cloud demo that quietly bleeds money the moment you try to run it at real scale. I wanted to build something in between: a system that's actually usable in production, that I'd be comfortable handing to a paying client, and that doesn't fall apart the moment someone uploads a real document.
 
 <!-- more -->
 
 So that's what I did. Here's the walkthrough.
+
+## Why a Document Processing Pipeline Specifically
+
+A document processing pipeline isn't just one project — it's the foundation for at least three services I'm actively building toward: a RAG-based assistant, a customer care chatbot, and workflow automation. All three live or die on the same thing: the ability to reliably extract meaning from unstructured documents and make it queryable. Get the pipeline right and the rest becomes an architecture problem, not a data problem. This project is me getting the pipeline right.
 
 ## What It Actually Does
 
@@ -26,15 +30,11 @@ That's the whole user experience, and I'm trying not to dress it up more than th
 
 And importantly — the system tells you when it doesn't have enough context to answer properly. I'd rather have a system that says *"I'm not sure, this document doesn't really cover that"* than one that cheerfully makes something up and sounds confident about it.
 
-## The Shape of the System
+## How It Works, Under the Hood
 
-Before going deeper, it helps to see the whole thing at once. There are two paths through the system: a fast, async path for answering questions, and a background path for ingesting documents. They share a single vector store. Everything is observed end-to-end.
+Two paths, one system — a fast async lane for answering questions and a background lane for ingesting documents, sharing a single vector store with full observability across both.
 
 ![RAG Document Q&A architecture diagram showing the async query path and the background ingestion path sharing a TimescaleDB vector store, with Langfuse observability across both](images/rag-qa-architecture.svg)
-
-The query lane is the one a user feels. It has to be fast, it has to be non-blocking, and it has to return a grounded answer. The ingestion lane is the one that makes the query lane possible — it turns documents into something searchable, and it does that work in the background so it never holds the API hostage.
-
-## How It Works, Under the Hood
 
 **Reading the document properly.** Most tools treat a PDF like a pile of text. That's fine until you hit a table, or a nested heading, or a bulleted list where the structure carries the meaning. I use [Docling](https://github.com/DS4SD/docling) here, which gives back the structured document — headings, tables, lists, hierarchy intact — not just a flat string.
 
@@ -50,17 +50,7 @@ for chunk in raw_chunks:
 
 That dual-text trick is small but it matters. The embedding model sees "Section 4.2 — Termination Clause: either party may..." when it's deciding similarity. The user sees just "either party may..." when the answer comes back. Best of both.
 
-**Embedding everything in one shot.** Every chunk has to be turned into a vector so the system can do semantic search. The naive approach is to call the embeddings API once per chunk. On a 60-chunk document, that's 60 round trips, 60 chances for rate limits, 60 chances for something to go wrong. I batch them:
-
-```python
-response = self.openai_client.embeddings.create(
-    input=texts,  # all 60 chunks at once
-    model="text-embedding-3-small",
-)
-embeddings = [item.embedding for item in response.data]
-```
-
-One call. Same result. Faster, cheaper, less to break.
+**Embedding everything in one shot.** Every chunk has to be turned into a vector so the system can do semantic search. The naive approach is to call the embeddings API once per chunk — on a 60-chunk document, that's 60 round trips, 60 chances for rate limits, 60 chances for something to go wrong. Instead, all chunks go in a single batched call. One call. Same result. Faster, cheaper, less to break.
 
 **Storing vectors in Postgres, not a dedicated vector DB.** I use [TimescaleDB](https://www.timescale.com/) with the `pgvectorscale` extension. This is a deliberate choice. Timescale's own benchmarks put it ahead of Pinecone on performance at around 75% lower cost — and more importantly, it's just Postgres. Any engineer your team already has can back it up, monitor it, query it, migrate it. No new vendor lock-in. No mystery black box.
 
@@ -74,6 +64,18 @@ class SynthesizedResponse(BaseModel):
 ```
 
 No regex parsing. No *"please output valid JSON"* in the system prompt. If the response doesn't match the shape, Instructor retries it automatically. The API either gives you a clean, validated object or it gives you an honest error.
+
+![A real question answered — structured response with answer, thought process, and enough_context: true](images/04-query-good-answer.png)
+
+![A second query, different angle — same reliable structured output](images/05-query-another-good-answer.png)
+
+The `enough_context` flag is the part I'm most proud of. When the retrieved chunks don't actually support an answer, the model sets it to `false` and says so — instead of confabulating something plausible. Most AI systems fail loudly or lie quietly. This one tells you when it doesn't know.
+
+![The system admitting it doesn't have enough context to answer — no hallucination, just honesty](images/06-query-not-enough-context.png)
+
+If this is the kind of reliability you want for your own documents, let's talk about it.
+
+[Book a Free 30-Min AI Consultation :material-arrow-top-right:](https://calendar.app.google/APm8CTidVGbFPzTC7){ .md-button .md-button--primary }
 
 ## What Makes This Production-Ready
 
@@ -91,11 +93,25 @@ return IngestResponse(
 )
 ```
 
+![Uploading a real document — the API responds instantly with a job ID, no blocking](images/01-ingest-upload.png)
+
+![Polling the job endpoint — status flips to SUCCESS with a chunk count once the worker finishes](images/02-ingest-job-success.png)
+
+![The document is now listed and queryable, with filename and chunk count](images/03-documents-list.png)
+
 **Everything is observable.** Every LLM call, every embedding request, every token, every dollar — it's all going through [Langfuse](https://langfuse.com/). I'm not adding this later as an afterthought; the OpenAI clients are wrapped with Langfuse's drop-in replacements, and key functions are decorated with `@observe()`. When a client asks "what's this actually costing us per month," I can give them a real answer.
 
-**It's built to be swapped.** The system is broken into clean, independent pieces — `DocumentProcessor`, `Chunker`, `VectorStore`, `LLMFactory`, `Synthesizer`. Want to swap OpenAI for Anthropic? The `LLMFactory` already supports both. Want to try a different chunking strategy six months from now when something better comes out? You can, without rewriting the rest of the system. That kind of flexibility only exists when you bother to draw the lines in the right places up front.
+![Langfuse trace for a happy path query — full pipeline visibility with spans, latencies, and token costs](images/10-langfuse-trace.png)
 
-**It all runs in Docker.** TimescaleDB, Redis, everything. `docker compose up` and you're going. No cloud account needed to develop locally. No weird drift between "works on my machine" and production.
+The system is also built from clean, swappable pieces — swap OpenAI for Anthropic, change the chunking strategy, scale the infra — none of that requires rewriting anything else. And it all runs in Docker: `docker compose up` and you're going, no cloud account needed.
+
+It also fails cleanly when it should. Wrong file type, empty input, or a frustrated user venting — the system handles each case explicitly rather than quietly doing the wrong thing.
+
+![Uploading an unsupported file type — rejected immediately with a clear 400 error](images/07-ingest-wrong-filetype.png)
+
+![Submitting an empty question — caught at the API layer before it ever reaches the model](images/08-query-empty-question.png)
+
+![A frustrated, emotionally charged question — the system responds with empathy and correctly flags enough_context: false rather than guessing](images/09-query-angry-graceful.png)
 
 ## Who This Is Actually For
 
@@ -115,6 +131,7 @@ If your team is spending more time hunting through documents than using what's i
 
     I help teams design and ship production-grade RAG systems — reliable, observable, and cost-conscious from day one. Happy to walk through your use case and tell you honestly whether this fits.
 
-    [Email Me :material-arrow-top-right:](mailto:gayithri@pojoai.com){ .md-button .md-button--primary }
+    [Book a Free 30-Min AI Consultation :material-calendar:](https://calendar.app.google/APm8CTidVGbFPzTC7){ .md-button .md-button--primary }
+    [Email Me :material-arrow-top-right:](mailto:gayithri@pojoai.com){ .md-button }
 
 </div>
