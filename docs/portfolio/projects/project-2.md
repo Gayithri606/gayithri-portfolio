@@ -6,7 +6,7 @@ description: Led JDK 17 migration for a 20% performance boost and Spring Boot 2.
 # Walmart Core System Performance Overhaul
 
 ??? tip "Project Context"
-    When creating your own portfolio entries, include specific metrics, your individual contributions, and the technical decisions that drove results — as shown below.
+    This project was completed during my time as a Software Developer at Walmart, where I led the JDK 17 migration and Spring Boot upgrade for a core production system, delivering measurable gains in performance, startup time, and long-term maintainability.
 
 !!! abstract "Project Summary"
     **Company**: Walmart
