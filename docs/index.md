@@ -46,7 +46,7 @@ canonical_url: https://gayithriponnapalli.com
 
 ## About me
 
- I help teams turn their data and existing systems into AI that actually works — RAG assistants that answer real questions, chatbots that handle real requests, and automation that cuts real manual work.
+ My focus is simple: take a team's existing data and systems and turn them into AI that actually works once real users start using it — not a shiny demo that only works in a controlled setting. That reliability-first approach is what I bring to every engagement.
 
 With 5 years of backend engineering experience at Walmart, Oracle, and VMware, I bring production discipline to AI development. After my early career in enterprise engineering, I took an intentional career break to raise my family, while actively upskilling in the later years — then returned to tech in 2025, hitting the ground running as a Software Developer at Walmart, before transitioning fully into AI engineering. I build with Python and FastAPI, and I'm focused on building reliable AI your team can depend on. I completed a rigorous, production-focused AI Engineering program at Datalumina where I deployed end-to-end AI applications with RAG, vector databases, and LLM orchestration.
 
