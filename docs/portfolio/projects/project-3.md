@@ -5,7 +5,7 @@ description: A production-grade, event-driven AI platform that autonomously moni
 
 # AI Executive Assistant — Intelligent Email Automation Platform
 
-??? tip "Portfolio Best Practices"
+??? tip "Project Context"
     This project was built as an independent initiative — a real-world productivity tool and a reference implementation for teams learning to build production AI systems.
 
 !!! abstract "Project Summary"
