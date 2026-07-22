@@ -18,19 +18,19 @@ A collection of AI engineering and backend development projects demonstrating re
     A production-ready AI Customer Support Automation Platform, built with FastAPI, PostgreSQL/pgvector for RAG, PydanticAI, and Langfuse for LLM observability.
 -->
 
--   [AI Document Q&A System — Production-Grade RAG Pipeline](projects/project-4.md)
+-   [AI Document Q&A System — Production-Grade RAG Pipeline](projects/ai-document-qa-system.md)
 
     ---
 
     A production-ready RAG pipeline for natural-language Q&A over PDF and DOCX documents — built with FastAPI, Celery, TimescaleDB/pgvectorscale, Docling, Instructor, and Langfuse for full observability.
 
--   [AI Executive Assistant — Intelligent Email Automation Platform](projects/project-3.md)
+-   [AI Executive Assistant — Intelligent Email Automation Platform](projects/ai-executive-assistant.md)
 
     ---
 
     A production-grade, event-driven AI platform that autonomously monitors inboxes, classifies emails, and takes intelligent action — built with FastAPI, Celery, PostgreSQL/pgvector, PydanticAI, and Langfuse for full observability.
 
--   [Walmart Core System Performance Overhaul](projects/project-2.md)
+-   [Walmart Core System Performance Overhaul](projects/walmart-core-system-performance-overhaul.md)
 
     ---
 
