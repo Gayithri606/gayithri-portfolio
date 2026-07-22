@@ -1,0 +1,158 @@
+/* Two-column hero: problems on left, photo on right */
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: center;
+  padding: 3rem 0 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Decorative corner circuit lines */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  width: 60px;
+  height: 60px;
+  border-top: 2px solid #C4973A44;
+  border-left: 2px solid #C4973A44;
+  border-radius: 4px 0 0 0;
+  pointer-events: none;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  right: 0px;
+  width: 60px;
+  height: 60px;
+  border-bottom: 2px solid #C4973A44;
+  border-right: 2px solid #C4973A44;
+  border-radius: 0 0 4px 0;
+  pointer-events: none;
+}
+
+/* Left column: text */
+.hero-left {
+  text-align: left;
+}
+
+/* Right column: photo */
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Profile photo — circular */
+.profile-image {
+  width: 210px;
+  height: 210px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  border: 4px solid #C4973A;
+  box-shadow: 0 4px 24px rgba(196, 151, 58, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  margin: 0;
+}
+
+.profile-image:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 28px rgba(196, 151, 58, 0.4);
+}
+
+/* Name below photo */
+.hero-photo-name {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+  text-align: center;
+}
+
+.hero-photo-title {
+  font-size: 0.8rem;
+  color: #C4973A;
+  text-align: center;
+  margin-top: 0.2rem;
+}
+
+/* Left headings */
+.hero-left h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+/* Subtitle — replaces h3 to avoid showing in sidebar TOC */
+.hero-subtitle {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+/* Problem bullets — tighter spacing */
+.hero-left ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.25rem 0 1rem 0;
+}
+
+.hero-left ul li {
+  padding: 0.15rem 0 0.15rem 1.4rem;
+  position: relative;
+  color: var(--md-default-fg-color);
+}
+
+.hero-left ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #C4973A;
+  font-weight: bold;
+}
+
+/* Mobile: stack vertically, photo on top */
+@media screen and (max-width: 768px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 0 1rem;
+    text-align: center;
+  }
+
+  .hero-right {
+    order: -1;
+  }
+
+  .profile-image {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+  }
+
+  .hero-left {
+    text-align: center;
+  }
+
+  .hero-left ul {
+    text-align: left;
+    max-width: 340px;
+    margin: 0.5rem auto 1.5rem;
+  }
+
+  .hero-left h1 {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,122 @@
+/* Light theme custom colors — PojoAI brand */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #1E1E3A;
+  --md-accent-fg-color: #C4973A;
+  --md-typeset-a-color: #C4973A;
+  --md-footer-bg-color: var(--md-primary-fg-color);
+  --md-default-bg-color: #f7f7fb;
+}
+
+/* Subtle dot-grid background on the page body */
+[data-md-color-scheme="default"] .md-main {
+  background-image: radial-gradient(circle, #c4973a22 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Soft glowing orbs — top right and bottom left */
+[data-md-color-scheme="default"] .md-content {
+  position: relative;
+}
+
+[data-md-color-scheme="default"] .md-content::before {
+  content: "";
+  position: fixed;
+  top: -120px;
+  right: -120px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(196,151,58,0.10) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-md-color-scheme="default"] .md-content::after {
+  content: "";
+  position: fixed;
+  bottom: -100px;
+  left: -100px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(30,30,58,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Dark theme dot grid */
+[data-md-color-scheme="slate"] .md-main {
+  background-image: radial-gradient(circle, #c4973a18 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Dark theme custom colors */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #1E1E3A;
+  --md-default-bg-color: #12121f;
+  --md-accent-fg-color: #C4973A;
+  --md-typeset-a-color: #C4973A;
+}
+
+/* Buttons */
+.md-button--primary {
+  background-color: #C4973A !important;
+  border-color: #C4973A !important;
+  color: #ffffff !important;
+}
+
+.md-button--primary:hover {
+  background-color: #1E1E3A !important;
+  border-color: #1E1E3A !important;
+  color: #ffffff !important;
+}
+
+[data-md-color-scheme="slate"] .md-button {
+  background-color: #C4973A;
+  border-color: #C4973A;
+  color: #ffffff;
+}
+
+[data-md-color-scheme="slate"] .md-button:hover {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #1E1E3A;
+}
+
+/* Footer */
+.md-footer {
+  background-color: #1E1E3A;
+}
+
+.md-footer-meta {
+  background-color: #12121f;
+}
+
+/* Gold divider accent under name */
+.hero-name-accent {
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #C4973A;
+  margin: 0.75rem auto 1rem auto;
+  border-radius: 2px;
+}
+
+/* Skill tags */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.skill-tag {
+  background-color: #C4973A22;
+  color: #C4973A;
+  border: 1px solid #C4973A66;
+  border-radius: 20px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
