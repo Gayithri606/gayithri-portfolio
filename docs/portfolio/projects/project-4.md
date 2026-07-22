@@ -5,7 +5,7 @@ description: A production-ready Retrieval-Augmented Generation (RAG) pipeline th
 
 # AI Document Q&A System — Production-Grade RAG Pipeline
 
-??? tip "Portfolio Best Practices"
+??? tip "Project Context"
     This project was built as an independent initiative — a real-world document intelligence tool and a reference implementation for teams building production RAG systems.
 
 !!! abstract "Project Summary"
