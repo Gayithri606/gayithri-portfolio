@@ -3,7 +3,7 @@ title: Gayithri Ponnapalli
 description: Gayithri Ponnapalli is an AI Engineer who helps teams build reliable RAG assistants, chatbots, and AI automation using Python, FastAPI, and LLMs.
 keywords: Gayithri Ponnapalli, AI Engineer, RAG, Python, FastAPI, LLM, PydanticAI, LangChain, MCP
 author: Gayithri Ponnapalli
-canonical_url: https://yourdomain.com
+canonical_url: https://gayithriponnapalli.com
 ---
 
 <script type="application/ld+json">
@@ -11,10 +11,10 @@ canonical_url: https://yourdomain.com
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Gayithri Ponnapalli",
-  "url": "https://yourdomain.com",
+  "url": "https://gayithriponnapalli.com",
   "sameAs": [
-    "https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME",
-    "https://github.com/YOUR_GITHUB_USERNAME"
+    "https://www.upwork.com/freelancers/gayithrip?viewMode=1",
+    "https://github.com/Gayithri606"
   ],
   "jobTitle": "AI Engineer",
   "email": "gayithri@pojoai.com"
