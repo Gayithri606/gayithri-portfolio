@@ -28,7 +28,6 @@ theme:
     - content.tooltips
     - content.tabs.link
     - content.code.copy
-    - navigation.footer
   language: en
   palette:
     - scheme: default
