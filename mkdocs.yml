@@ -11,7 +11,6 @@ nav:
       - portfolio/projects/ai-document-qa-system.md
       - portfolio/projects/ai-executive-assistant.md
       - portfolio/projects/walmart-core-system-performance-overhaul.md
-      # - portfolio/projects/project-1.md  # Uncomment to re-add Project 1
   - Blog:
     - blog/index.md 
 
