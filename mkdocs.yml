@@ -54,9 +54,9 @@ extra:
   generator: true
   social:
     - icon: fontawesome/brands/github
-        link: https://github.com/Gayithri606
+      link: https://github.com/Gayithri606
     - icon: fontawesome/brands/upwork
-        link: https://www.upwork.com/freelancers/gayithrip?viewMode=1
+      link: https://www.upwork.com/freelancers/gayithrip?viewMode=1
   analytics:
     # provider: google
     # property: G-W9Y130NXVZ
