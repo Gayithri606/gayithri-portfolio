@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" font-family="Roboto, system-ui, -apple-system, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">RAG Document Q&amp;A System — Architecture Diagram</title>
+  <desc id="desc">Two-lane architecture showing the async query path and the background ingestion path, with Langfuse observability across both, and a shared TimescaleDB vector store.</desc>
+
+  <defs>
+    <!-- Arrow markers -->
+    <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#C4973A"/>
+    </marker>
+    <marker id="arrowNavy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1E1E3A"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6B6B7A"/>
+    </marker>
+
+    <!-- Reusable box style -->
+    <style>
+      .box { fill: #1E1E3A; stroke: #1E1E3A; stroke-width: 1.5; rx: 10; ry: 10; }
+      .box-light { fill: #FFFFFF; stroke: #1E1E3A; stroke-width: 1.5; rx: 10; ry: 10; }
+      .box-accent { fill: #C4973A; stroke: #C4973A; stroke-width: 1.5; rx: 10; ry: 10; }
+      .box-db { fill: #1E1E3A; stroke: #C4973A; stroke-width: 2; rx: 10; ry: 10; }
+      .title-text { font-size: 14px; font-weight: 600; fill: #FFFFFF; }
+      .title-text-dark { font-size: 14px; font-weight: 600; fill: #1E1E3A; }
+      .sub-text { font-size: 11px; fill: #E8E6F0; font-weight: 400; }
+      .sub-text-dark { font-size: 11px; fill: #6B6B7A; font-weight: 400; }
+      .lane-label { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; fill: #1E1E3A; text-transform: uppercase; }
+      .lane-label-muted { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; fill: #6B6B7A; text-transform: uppercase; }
+      .flow-label { font-size: 11px; fill: #1E1E3A; font-weight: 500; }
+      .flow-label-muted { font-size: 10px; fill: #6B6B7A; font-style: italic; }
+      .header-text { font-size: 12px; fill: #1E1E3A; font-weight: 600; letter-spacing: 0.5px; }
+      .diagram-title { font-size: 16px; fill: #1E1E3A; font-weight: 700; }
+    </style>
+  </defs>
+
+  <!-- Diagram title -->
+  <text x="500" y="28" class="diagram-title" text-anchor="middle">RAG Document Q&amp;A — System Architecture</text>
+
+  <!-- Langfuse observability banner -->
+  <g transform="translate(60,58)">
+    <rect x="0" y="0" width="880" height="42" rx="21" ry="21" fill="none" stroke="#C4973A" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <circle cx="28" cy="21" r="8" fill="#C4973A"/>
+    <text x="50" y="25" class="header-text">Langfuse · Observability across every request — tokens, latency, cost, prompts, completions</text>
+  </g>
+
+  <!-- QUERY PATH (top lane) -->
+  <text x="60" y="140" class="lane-label">Query path — fully async</text>
+
+  <!-- Client node -->
+  <g transform="translate(60,160)">
+    <rect class="box-light" width="90" height="60"/>
+    <text x="45" y="30" class="title-text-dark" text-anchor="middle">Client</text>
+    <text x="45" y="48" class="sub-text-dark" text-anchor="middle">question</text>
+  </g>
+
+  <!-- FastAPI query -->
+  <g transform="translate(210,160)">
+    <rect class="box" width="130" height="60"/>
+    <text x="65" y="28" class="title-text" text-anchor="middle">FastAPI</text>
+    <text x="65" y="46" class="sub-text" text-anchor="middle">POST /query · async</text>
+  </g>
+
+  <!-- Vector Store search -->
+  <g transform="translate(395,160)">
+    <rect class="box" width="180" height="60"/>
+    <text x="90" y="28" class="title-text" text-anchor="middle">Vector Store — search</text>
+    <text x="90" y="46" class="sub-text" text-anchor="middle">embed + cosine similarity</text>
+  </g>
+
+  <!-- Synthesizer -->
+  <g transform="translate(625,160)">
+    <rect class="box" width="180" height="60"/>
+    <text x="90" y="28" class="title-text" text-anchor="middle">Synthesizer — GPT-4o</text>
+    <text x="90" y="46" class="sub-text" text-anchor="middle">Instructor · structured output</text>
+  </g>
+
+  <!-- Answer out -->
+  <g transform="translate(855,160)">
+    <rect class="box-accent" width="85" height="60"/>
+    <text x="42" y="34" class="title-text" text-anchor="middle">Answer</text>
+  </g>
+
+  <!-- Query arrows -->
+  <line x1="150" y1="190" x2="205" y2="190" stroke="#C4973A" stroke-width="2" marker-end="url(#arrowGold)"/>
+  <line x1="340" y1="190" x2="390" y2="190" stroke="#C4973A" stroke-width="2" marker-end="url(#arrowGold)"/>
+  <line x1="575" y1="190" x2="620" y2="190" stroke="#C4973A" stroke-width="2" marker-end="url(#arrowGold)"/>
+  <line x1="805" y1="190" x2="852" y2="190" stroke="#C4973A" stroke-width="2" marker-end="url(#arrowGold)"/>
+
+  <!-- Divider -->
+  <line x1="60" y1="270" x2="940" y2="270" stroke="#1E1E3A" stroke-width="0.5" stroke-dasharray="2 6" opacity="0.35"/>
+
+  <!-- INGESTION PATH (bottom lane) -->
+  <text x="60" y="300" class="lane-label">Ingestion path — background job</text>
+
+  <!-- Client upload -->
+  <g transform="translate(60,320)">
+    <rect class="box-light" width="90" height="60"/>
+    <text x="45" y="30" class="title-text-dark" text-anchor="middle">Client</text>
+    <text x="45" y="48" class="sub-text-dark" text-anchor="middle">PDF / DOCX</text>
+  </g>
+
+  <!-- FastAPI ingest -->
+  <g transform="translate(210,320)">
+    <rect class="box" width="130" height="60"/>
+    <text x="65" y="28" class="title-text" text-anchor="middle">FastAPI</text>
+    <text x="65" y="46" class="sub-text" text-anchor="middle">POST /ingest</text>
+  </g>
+
+  <!-- job_id returned -->
+  <g transform="translate(210,398)">
+    <rect class="box-accent" width="130" height="32" rx="16" ry="16"/>
+    <text x="65" y="21" class="title-text" text-anchor="middle">job_id · immediate</text>
+  </g>
+
+  <!-- Celery queue -->
+  <g transform="translate(380,320)">
+    <rect class="box" width="140" height="60"/>
+    <text x="70" y="28" class="title-text" text-anchor="middle">Celery + Redis</text>
+    <text x="70" y="46" class="sub-text" text-anchor="middle">task queue</text>
+  </g>
+
+  <!-- Worker processing -->
+  <g transform="translate(560,320)">
+    <rect class="box" width="380" height="60"/>
+    <text x="190" y="28" class="title-text" text-anchor="middle">Background Worker · sync pipeline</text>
+    <text x="190" y="46" class="sub-text" text-anchor="middle">Docling  →  HybridChunker  →  Batch Embed (text-embedding-3-small)</text>
+  </g>
+
+  <!-- Ingestion arrows -->
+  <line x1="150" y1="350" x2="205" y2="350" stroke="#C4973A" stroke-width="2" marker-end="url(#arrowGold)"/>
+  <line x1="340" y1="350" x2="375" y2="350" stroke="#C4973A" stroke-width="2" marker-end="url(#arrowGold)"/>
+  <line x1="520" y1="350" x2="555" y2="350" stroke="#C4973A" stroke-width="2" marker-end="url(#arrowGold)"/>
+
+  <!-- Arrow back from FastAPI to Client with job_id -->
+  <path d="M 275 380 L 275 414 L 152 414" fill="none" stroke="#1E1E3A" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrowNavy)"/>
+
+  <!-- SHARED DATABASE -->
+  <g transform="translate(395,478)">
+    <rect class="box-db" width="210" height="70"/>
+    <text x="105" y="28" class="title-text" text-anchor="middle">TimescaleDB</text>
+    <text x="105" y="48" class="sub-text" text-anchor="middle">pgvectorscale · vectors + metadata</text>
+    <text x="105" y="63" class="sub-text" text-anchor="middle">(Postgres — self-hosted)</text>
+  </g>
+
+  <!-- DB connection lines -->
+  <!-- Worker writes to DB -->
+  <path d="M 750 380 L 750 440 L 500 440 L 500 475" fill="none" stroke="#C4973A" stroke-width="2" marker-end="url(#arrowGold)"/>
+  <text x="760" y="430" class="flow-label-muted">upsert chunks + embeddings</text>
+
+  <!-- DB reads to Vector Store (top lane) -->
+  <path d="M 485 478 L 485 235 L 485 225" fill="none" stroke="#6B6B7A" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrowGray)"/>
+  <text x="495" y="400" class="flow-label-muted">retrieve top-k</text>
+
+  <!-- Polling arrow (Client polls /jobs/{id}) -->
+  <path d="M 105 380 L 105 500 L 160 500" fill="none" stroke="#6B6B7A" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="113" y="520" class="flow-label-muted">poll GET /jobs/{id}</text>
+
+  <!-- Legend -->
+  <g transform="translate(60,570)">
+    <circle cx="6" cy="-3" r="5" fill="#C4973A"/>
+    <text x="18" y="0" class="flow-label">primary data flow</text>
+    <line x1="155" y1="-3" x2="180" y2="-3" stroke="#6B6B7A" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="188" y="0" class="flow-label">async / polling / read-back</text>
+    <rect x="370" y="-10" width="14" height="14" class="box-db"/>
+    <text x="390" y="0" class="flow-label">shared vector store</text>
+  </g>
+</svg>
