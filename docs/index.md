@@ -13,6 +13,7 @@ canonical_url: https://gayithriponnapalli.com
   "name": "Gayithri Ponnapalli",
   "url": "https://gayithriponnapalli.com",
   "sameAs": [
+    "https://www.linkedin.com/in/gayithriponnapalli/",
     "https://www.upwork.com/freelancers/gayithrip?viewMode=1",
     "https://github.com/Gayithri606"
   ],
@@ -35,6 +36,9 @@ canonical_url: https://gayithriponnapalli.com
 - Need an engineer who bridges backend reliability with modern AI?
 
 [Book a free 30 min Intro Call :material-arrow-top-right:](https://calendar.app.google/APm8CTidVGbFPzTC7){ .md-button .md-button--primary }
+
+[:fontawesome-brands-github: GitHub](https://github.com/Gayithri606){ .md-button target="_blank" rel="noopener" }
+[:fontawesome-brands-linkedin: LinkedIn](https://www.linkedin.com/in/gayithriponnapalli/){ .md-button target="_blank" rel="noopener" }
 
 </div>
 

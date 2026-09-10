@@ -13,6 +13,8 @@ nav:
       - portfolio/projects/walmart-core-system-performance-overhaul.md
   - Blog:
     - blog/index.md 
+  - GitHub: https://github.com/Gayithri606
+  - LinkedIn: https://www.linkedin.com/in/gayithriponnapalli/
 
 theme:
   name: material
@@ -53,6 +55,8 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/Gayithri606
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/gayithriponnapalli/
     - icon: fontawesome/brands/upwork
       link: https://www.upwork.com/freelancers/gayithrip?viewMode=1
   analytics:
@@ -93,9 +97,7 @@ markdown_extensions:
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js
-
-extra_files:
-  - docs/robots.txt
+  - javascripts/external-links.js
 
 copyright: |
-  &copy; 2026 <a href="https://www.upwork.com/freelancers/gayithrip?viewMode=1" target="_blank" rel="noopener">Gayithri Ponnapalli</a>. All rights reserved.
+  &copy; 2026 <a href="https://www.linkedin.com/in/gayithriponnapalli/" target="_blank" rel="noopener">Gayithri Ponnapalli</a>. All rights reserved.
